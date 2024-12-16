@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void printHashes(int quantity)
+void PrintHashes(int quantity)
 {
   for (int j = 0; j < quantity; j++)
   {
@@ -8,17 +8,17 @@ void printHashes(int quantity)
   }
 }
 
-void mario(int height)
+void CreateStairs(int height)
 {
   for (int step = 1; step <= height; step++)
   {
     printf("%*s", height - step, "");
 
-    printHashes(step);
+    PrintHashes(step);
 
     printf("%2s", "");
 
-    printHashes(step);
+    PrintHashes(step);
 
     printf("\n");
   }
@@ -27,14 +27,25 @@ void mario(int height)
 int main(void)
 {
   int input;
-  int check;
+  int checkInput;
 
   printf("Enter height of the ladder: ");
-  check = scanf("%i", &input);
+  checkInput = scanf("%i", &input);
 
-  // TODO: add verification for the input
-
-  mario(input);
+  if (checkInput != 1 || input <= 0)
+  {
+    printf("Wrong input, try again.\n");
+    return 1;
+  }
+  else
+  {
+    char extraInput[100];
+    if (scanf("%99[^\n]", extraInput) == 1)
+    {
+      printf("[WARNING] Extra input detected - %s, we'll use valid input - %i\n", extraInput, input);
+    }
+    CreateStairs(input);
+  }
 
   return 0;
 }
