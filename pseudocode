@@ -1,4 +1,0 @@
-we take input for height
-  base step in the ladder width is equals height
-  for top step we need to add spaces $base - $step and hashes for remaining space
-repeat it until done

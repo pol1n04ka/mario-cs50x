@@ -22,4 +22,3 @@ Height: 8
 - [x] code to resolve the problem above  
 - [x] code to take user's input  
 - [x] verification for user input  
-- [ ] optimized the algorithm
